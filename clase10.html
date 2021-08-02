@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="Clase10-01.css">
+        <link rel="stylesheet" href="Clase10-01_02.css">
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="top">
+                <header class="principal">
+                    <h1 class="nome">Leonardo COLLADO</h1>
+                    <p class="pq">Por un futuro mejor...</p>
+                    <p class="pquienes">Por mi y por los mios</p>
+                </header>
+                <div class="entrada entrada1">
+                    <p>ENTRADA</p>
+                    <p class="price">$500</p>
+                    <p>VIP + FOTOS</p>
+                </div>
+                <div class="entrada entrada2">
+                    <p>ENTRADA</p>
+                    <p class="price">$300</p>
+                    <p>VIP</p>
+                </div>
+            </div>
+            <nav class="menu">
+                <button aria-expanded="false" aria-controls="menu-list">
+                    <span class="open">&#9776;</span>
+                    <span class="close">&#9747;</span>
+                    Menú
+                </button>
+                <ul id="menu-list">
+                    <li>
+                        <a href="">About</a>
+                    </li>
+                    <li>
+                        <a href="">Speakers</a>
+                    </li>
+                    <li>
+                        <a href="">Precios</a>
+                    </li>
+                    <li>
+                        <a href="">Code</a>
+                    </li>
+                    <li>
+                        <a href="">VIP</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <section class="features">
+                <div class="feature">
+                    <span class="icon">🍔 </span>
+                    <h3>Comida</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    </p>
+                </div>
+                <div class="feature">
+                    <span class="icon">🍺 </span>
+                    <h3>Music all nigth</h3>
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+
+                    </p>
+                </div>
+                <div class="feature">
+                    <span class="icon">🍺 </span>
+                    <h3>Music all nigth</h3>
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+
+                    </p>
+                </div>
+                <div class="feature">
+                    <span class="icon">🍺 </span>
+                    <h3>Music all nigth</h3>
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+
+                    </p>
+                </div>
+            </section>
+
+            <section class="about">
+                <video src="./Assets/15688196_1870652803153675_8775170363903442944_n.mp4" autoplay controls></video>
+                <div class="about__details">
+                    <h2>Vamo a codea</h2>
+                    <p>slim profile, easy to hold and loaded with cheese</p>
+                    <p>This is the one you have been waiting for</p>
+                    <button>Info Pliss &#10142;</button>
+                </div>
+            </section>
+
+            <section class="gallery">
+                <h2>Instant grams</h2>
+                <img src="https://source.unsplash.com/random/201x201" alt="" />
+                <img src="https://source.unsplash.com/random/202x202" alt="" />
+                <img src="https://source.unsplash.com/random/203x203" alt="" />
+                <img src="https://source.unsplash.com/random/204x204" alt="" />
+                <img src="https://source.unsplash.com/random/205x205" alt="" />
+                <img src="https://source.unsplash.com/random/206x206" alt="" />
+                <img src="https://source.unsplash.com/random/207x207" alt="" />
+                <img src="https://source.unsplash.com/random/208x208" alt="" />
+                <img src="https://source.unsplash.com/random/209x209" alt="" />
+                <img src="https://source.unsplash.com/random/210x210" alt="" />
+            </section>
+        </div>
+        <script>
+            
+            const navButton = document.querySelector('button[aria-expanded]');
+
+            function toggleNav({ target }) {
+                const expandir = 
+                    target.getAttribute('aria-expanded') === "true" || false;
+
+                navButton.setAttribute('aria-expanded', !expandir);
+            }
+
+            navButton.addEventListener("click", toggleNav);
+
+        </script>
+    </body>
+</html>

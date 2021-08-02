@@ -1,0 +1,330 @@
+body {
+    font-size: 1rem;
+}
+
+button {
+    background: var(--color-cheto);
+    border: 1px white solid;
+    padding: 10px 20px;
+    color: white;
+}
+
+
+img {
+    max-width: 100%;
+}
+
+/* Wrapper */
+
+.wrapper {
+    display: grid;
+    grid-gap: 20px;
+}
+
+
+
+/* Top */
+
+
+                    /*Acá nos vamos a manejar con grid area que son la definicion de espacios que van a ocupar mediante un meapeo.*/
+.top {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-areas:
+    'principal principal entrada1'
+    'principal principal entrada2';
+}
+
+.principal {
+    grid-area: principal; /*Grid Area que es mapeo*/
+    min-height: 400px;
+
+    /*Aá le da una imagen descargada como fondo*/
+    background: rgba(255, 255, 255, 0.205) url(Assets/chillax.png);
+    background-size: cover;
+    background-position: center;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+
+    /*Esto significa que todo lo que sea dependiente de principal tenga lo que se expresa en lo siguiente*/
+.principal >* {
+    background: var(--color-cheto);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.entrada p {
+    margin: 0;
+}
+
+.entrada  {
+    background: var(--color-cheto);
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+
+.entrada1 {
+    grid-area: entrada1; /*Grid Area que es mapeo*/
+    
+}
+
+.entrada2 {
+    grid-area: entrada2; /*Grid Area que es mapeo*/
+}
+
+
+.price {
+    font-size: 40px;
+    font-weight: 300;
+}
+
+
+
+
+
+
+
+.nome{
+    color: white;
+    text-shadow: 0 4px 0 rgba(0, 0, 0, 1)
+}
+
+.pq {
+    color: white;
+    text-shadow: 0 3px 0 rgba(0, 0, 0, 1)    
+}
+
+.pquienes {
+    color: white;
+    text-shadow: 0 2px 0 rgba(0, 0, 0, 1)
+}
+
+
+    /*MENU----------------------------------------------*/
+
+    .menu ul {
+        display: grid;
+        grid-gap: 10px;
+        padding: 0;
+        list-style: none;
+
+        /*aqui le doy el autofit para que sepira en todas lo responsive*/
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+
+    .menu a {
+        /* background: var(--color-cheto); */
+        padding: 10px;
+        text-align: center;
+        font-size: 1.25rem;
+        /* Text transform uppercase le da mayúscula a las letras */
+        text-transform: uppercase;
+    }
+
+
+    /* Esto hace que el boton de menú se esconda */
+    [aria-controls="menu-list"] {
+        display: none;
+    }
+
+    .menu li {
+        background: var(--color-cheto);
+        text-align: center;
+    }
+
+
+    /*FEATURES-------------------------------------------*/
+    .features {
+        background: rgba(20, 19, 19, 0.288);
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        border-radius: 5px;
+    }
+
+    .features .icon {
+        font-size: 50px;
+    }
+    
+    .features p {
+        color: rgba(0, 0, 0, 0.575);
+    }
+
+    .features h3 {
+        background: var(--color-cheto);
+        border-radius: 5px;
+        text-align:start;
+        padding: 5px;
+    }
+
+    .feature {
+        padding: 10px;
+        text-align: center;
+        border-radius: 5px;
+        box-shadow: 0 0 20px black;
+        margin: 5px;
+    }
+
+    .feature:hover {
+        box-shadow: 0 0 20px white;
+    }
+
+
+    /* ABOUT-------------------------------------------- */
+
+    .about {
+        background: var(--color-cheto);
+        padding: 50px;
+        display: grid;
+        grid-template-columns: 400px 1fr;
+        grid-gap: 20px;
+        align-items: center;
+    }
+
+    .about video {
+        width: 100%;
+    }
+
+
+    /* GALLERY--------------------------------------- */
+
+    .gallery {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+       
+       
+        /* grid-template-areas:
+        "h2 h2 h2";
+        background: rgba(0, 0, 0, 0.205);    */
+    }
+
+    .gallery h2 {
+
+        /*Esto lo manda al h2 arriba de las imagenes, deandolo solo como un subtitulo*/
+        grid-column: 1 / -1;
+        /* text-align: center; */
+        background: rgba(0, 0, 0, 0.24);
+        /* padding: 10px; */
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        grid-gap: 20px;
+    }
+   
+   
+   
+   
+/* -----------------------------------------TRUCASO---------------------------------------*/
+
+    /* Esto lo manda al medio al subtítulo, es un after before pero hay que aplicarle al h2 el dsplay grid junto a un grid template columns: 1fr auto 1fr y luego el after/before */
+    .gallery h2:before,
+    .gallery h2:after {
+        display: block;
+        content: "";
+        background: linear-gradient( to var(--direction, right), rgb(147, 6, 212) 0%, transparent);
+    }
+
+    .gallery h2:after {
+        --direction: left;
+    }
+   
+/* -------------------------------------------------------------------------------------- */
+
+
+
+
+
+
+
+
+    .gallery img {
+        width: 100%;
+
+        box-shadow: 0 0 15px rgb(0, 0, 0);
+    }
+
+    .gallery img:hover {
+        box-shadow: 0 0 35px rgb(255, 255, 255);
+    }
+
+
+
+    @media (max-width: 1000px){
+        .menu {
+            /* Cuando sea menos de 1200px el menu se va para arriba, cuando son mas de 1200px se va para abajo o donde debe estar */
+            order: -1;
+            perspective: 800px;
+        }
+
+        /* Esto crea el botón menú para poder seleccionarlo, a este se le da la funconalidad con JS */
+        [aria-controls= "menu-list"] {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .menu ul {
+            /*El max-height 0 junto al overflow hidden permite que en pantallas mas grandes no se vea una linea al finalizar la rotación (lo cual queda mal)*/
+            max-height: 0;
+            overflow: hidden;
+            /* Proximamente con los aria expanded al pinchar sobre el menú se despliega y se ven los items del ul, al volver a pinchar sobre este hace que estos roten de manera horizontal y se terminen escondiendo, se le da funcionalidad al boton con JS */
+            transform: rotateX(90deg);
+            transition: all 0.5s;
+
+            
+        }
+
+
+/*------------------------------------------------DIFICIL DE ENTENDER------------------------------------------------*/
+    /*Bien en caso de que el valor sea true en el boton se van a ver todas las opciones o los items del ul*/
+        [aria-expanded="true"] ~ ul {
+            display: grid;
+            max-height: 500px;
+            transform: rotateX(0deg);
+        }
+
+        /*True: x  y desplegado el menú      .close
+          False: burguer y cerrado el menú   .open */
+
+    /*En caso de ser false el valor del boton, cuando se cierra el menú desaparece la X */
+        [aria-expanded="false"] .close {
+            display: none;
+        }
+
+    /*En caso de ser true el valor del botón, al desplegarse el menú aparece la X*/
+        [aria-expanded="true"] .close {
+            display: inline-block;
+        }
+
+    /*En caso de ser true el valor del botón, a su vez, al desplegarse desaparece la burguer*/
+        [aria-expanded="true"] .open {
+            display: none;
+        }
+    }
+
+
+    @media (max-width: 700px) {
+        .top {
+            grid-template-areas: 'principal principal'
+            'entrada1 entrada2';
+        }
+        .about {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media (max-width: 500px) {
+        .top {
+            grid-template-areas: 'principal'
+            'entrada1'
+            'entrada2';
+        }
+    }
+     
